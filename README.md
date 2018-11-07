@@ -4,8 +4,8 @@
 
 ## Link to published site URL
 
-
 ## Link to GitHub (public)
+https://github.com/EnFen/kraftme
 
 ## Description of project
 
@@ -14,6 +14,14 @@
 ### Functionality / features
 
 ### Screenshots
+![first trello screenshot](./docs/29.10.18_trello.png)
+![trello board day 2](./docs/30.10.18_trello.png)
+![trello board day 3](./docs/31.10.18_trello.png)
+![trello board day 3](./docs/31.10.18_trello2.png)
+![trello board day 4](./docs/1.11.18_trello.png)
+![trello board day 5](./docs/02.11.18_trello.png)
+![trello board day 5](./docs/02.11.18_trello2.png)
+![trello board day 8](./docs/05.11.18_trello.png)
 
 ### Tech stack (e.g. html, css, deployment platform, etc)
 
