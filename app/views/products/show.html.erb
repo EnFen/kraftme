@@ -71,4 +71,5 @@
 <% if @product.can_change?(current_user) %>
   <%= link_to 'Edit', edit_product_path(@product) %> |
 <% end %>
-<%= link_to 'Back', products_path %>
+<%= link_to 'Back', products_path %> <br/>
+<%= link_to 'Send message to seller', new_conversation_path(:r => @product.user.id) %>

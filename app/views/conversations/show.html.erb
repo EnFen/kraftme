@@ -1,0 +1,33 @@
+<h1><%= @conversation.subject %> </h1>
+
+<% for receipt in @conversation.receipts_for(current_user) %>
+    <div>
+        <table>
+            <tbody>
+                <tr>
+                    <td><strong><%= receipt.message.sender.username == current_user.username ? "You commented:" : "#{receipt.message.sender.username} commented:" %></strong></td>
+                </tr>
+                <tr>
+                    <td><strong>On:</strong> <%= time_tag(receipt.message.created_at) %></td>
+                </tr>
+                <tr>
+                    <td><strong>With:</strong> <%= receipt.message.body %></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br/>
+<% end %>
+
+<%= form_tag conversation_messages_path(@conversation), method: :post do %>
+    <div class="field">
+        <%= label_tag :body, 'Continue conversation:' %>
+        <%= text_area_tag :body %>
+    </div>
+
+    <div class="actions">
+    <%= submit_tag 'Send' %>
+    </div>
+<% end %>
+
+<%= link_to 'Back to Inbox', conversations_path %> | <%= link_to 'Back to shopping', products_path %>

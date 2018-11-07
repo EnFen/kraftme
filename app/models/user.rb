@@ -4,6 +4,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
+
+  acts_as_messageable
   
   has_many :products, dependent: :destroy
 
@@ -24,11 +26,12 @@ class User < ApplicationRecord
   validates :postcode, presence: true, numericality: { only_interger: true}, length: {is: 4}
   validates :state, presence: true, length: {in: 2..3},format: { with: /\A[A-Z]+\z/, message: "Only allows capital letters"}
   
-  
-  
-  
   # sets default role of 'standard_user' upon creation of user class 
   after_create :set_default_role
+
+  def mailboxer_email(object)
+    self.email
+  end
   
   def set_default_role
     self.add_role(:standard_user) if self.roles.blank?

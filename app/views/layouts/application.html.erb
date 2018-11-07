@@ -44,8 +44,11 @@
             <p><%= link_to 'Home', products_path %></p>
       <p><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p>
       <p><%= link_to 'Update Profile', edit_user_registration_path %></p>
-       <%# link for user products %>
+      <%# link for user products %>
       <p><%= link_to 'My Products', userproducts_path(current_user) %></p>
+      <%# link to current users message inbox %>
+      <p><%= link_to 'My Messages' , conversations_path %></p>
+      
       <p><%= link_to 'My Orders', myorders_path(current_user) %></p>
         <p><%= link_to 'My Sales', mysales_path(current_user) %></p>
     <% else %>
